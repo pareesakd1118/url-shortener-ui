@@ -7,18 +7,21 @@ import UrlForm from '../UrlForm/UrlForm';
 function App () {
   const [urls, setUrls] = useState([]);
 
-  useEffect(() => {
 
-  })
+  useEffect(() => {
+    getUrls()
+  .then(data => 
+    setUrls(data.urls))
+  }, [])
 
   return (
     <main className="App">
       <header>
         <h1>URL Shortener</h1>
-        <UrlForm />
+        <UrlForm setUrls={setUrls} urls={urls}/>
       </header>
 
-      <UrlContainer urls={"<<<Urls should go here>>>"}/>
+      <UrlContainer urls={urls}/>
     </main>
   );
 }
