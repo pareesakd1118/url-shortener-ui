@@ -32,6 +32,6 @@ describe('empty spec', () => {
     cy.get('.url').should('have.length', 2)
     cy.get('.url').last().contains("h3",'hello');
     cy.get('.url').last().contains("p",'https://shes-a-scientist.vercel.app/scientists');
-    cy.get('.url').first().contains("a",'http://localhost:3001/useshorturl/2');
+    cy.get('.url').last().contains("a",'http://localhost:3001/useshorturl/2');
   })
 })
